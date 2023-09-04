@@ -18,7 +18,7 @@ class IpWhiteListMiddleware implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         // 获取配置文件中的白名单IP列表
-        $whiteList = (array)config('ip_whitelist');
+        $whiteList = (array)config('ip.whitelist');
 
         // 获取客户端IP
         $clientIp = $request->getServerParams()['remote_addr'] ?? '';

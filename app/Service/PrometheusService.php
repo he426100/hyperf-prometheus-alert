@@ -11,4 +11,13 @@ namespace App\Service;
  */
 class PrometheusService
 {
+    /**
+     * 
+     * @param string $message 
+     * @return array 
+     */
+    public function parseMessage(string $message): array
+    {
+        return [];
+    }
 }
