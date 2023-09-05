@@ -5,22 +5,22 @@
 
 @foreach($alerts as $k => $v)
     @if($v["status"] == "resolved")
-        ## [Prometheus恢复信息]({{ $v["generatorURL"] }})
-        #### [{{ $v["labels"]["alertname"] }}]({{ $var }})
-        ###### 告警级别：{{ $v["labels"]["severity"] }}
-        ###### 开始时间：{{ $v["startsAt"] }}
-        ###### 结束时间：{{ $v["endsAt"] }}
-        ###### 故障主机IP：{{ $v["labels"]["instance"] }}
-        ##### {{ $v["annotations"]["description"] }}
-        ![Prometheus](https://raw.githubusercontent.com/feiyu563/PrometheusAlert/master/doc/alert-center.png)
+## [Prometheus恢复信息]({{ $v["generatorURL"] }})
+#### [{{ $v["labels"]["alertname"] }}]({{ $var }})
+###### 告警级别：{{ $v["labels"]["severity"] }}
+###### 开始时间：{{ $v["startsAt"] }}
+###### 结束时间：{{ $v["endsAt"] }}
+###### 故障主机IP：{{ $v["labels"]["instance"] }}
+##### {{ $v["annotations"]["description"] }}
+![Prometheus](https://raw.githubusercontent.com/feiyu563/PrometheusAlert/master/doc/images/alert-center.png)
     @else
-        ## [Prometheus告警信息]({{ $v["generatorURL"] }})
-        #### [{{ $v["labels"]["alertname"] }}]({{ $var }})
-        ###### 告警级别：{{ $v["labels"]["severity"] }}
-        ###### 开始时间：{{ $v["startsAt"] }}
-        ###### 故障主机IP：{{ $v["labels"]["instance"] }}
-        ##### {{ $v["annotations"]["description"] }}
-        ![Prometheus](https://raw.githubusercontent.com/feiyu563/PrometheusAlert/master/doc/alert-center.png)
+## [Prometheus告警信息]({{ $v["generatorURL"] }})
+#### [{{ $v["labels"]["alertname"] }}]({{ $var }})
+###### 告警级别：{{ $v["labels"]["severity"] }}
+###### 开始时间：{{ $v["startsAt"] }}
+###### 故障主机IP：{{ $v["labels"]["instance"] }}
+##### {{ $v["annotations"]["description"] }}
+![Prometheus](https://raw.githubusercontent.com/feiyu563/PrometheusAlert/master/doc/images/alert-center.png)
     @endif
 @endforeach
 

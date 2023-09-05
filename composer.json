@@ -35,6 +35,7 @@
         "hyperf/logger": "3.0.*",
         "hyperf/phar": "3.0.*",
         "hyperf/process": "3.0.*",
+        "hyperf/support": "^3.0",
         "hyperf/utils": "3.0.*",
         "hyperf/view": "^3.0",
         "hyperf/view-engine": "^3.0"
