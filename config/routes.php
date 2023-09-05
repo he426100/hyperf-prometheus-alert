@@ -12,4 +12,4 @@ declare(strict_types=1);
 use Hyperf\HttpServer\Router\Router;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController::index');
-Router::addRoute(['GET', 'POST', 'HEAD'], '/alerts', 'App\Controller\AlertsController@index');
+Router::post('/alerts', 'App\Controller\AlertsController@index');
