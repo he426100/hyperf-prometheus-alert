@@ -20,7 +20,7 @@ class PostMessageTask extends AbstractTask
     {
         try {
             $result = match($this->params['type']) {
-                'dd' => Factory::dingTalk()->setToken(env('DD_TOKEN'))->setSecret('Prometheus')->setMessage(new DDMarkdownMessage([
+                'dd' => Factory::dingTalk()->setToken(env('DD_TOKEN'))->setSecret(env('APP_NAME'))->setMessage(new DDMarkdownMessage([
                     'title' => 'PrometheusAlert',
                     'text'  => $this->params['text'],
                 ]))->send(),
