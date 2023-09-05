@@ -9,14 +9,14 @@ return [
                 'severity' => 'critical'
             ],
             'tpl' => 'prometheus-wx',
-            'type' => 'wx'
+            'type' => 'weWork'
         ],
         [
             'labels' => [
                 'severity' => 'warning'
             ],
             'tpl' => 'prometheus-dd',
-            'type' => 'dd'
+            'type' => 'dingTalk'
         ]
     ],
     'silences' => [
