@@ -54,8 +54,7 @@ class AppExceptionHandler extends ExceptionHandler
         if ($throwable instanceof ModelNotFoundException) {
             $data['message'] = '未找到相关记录';
         }
-        return $response->withHeader('Server', 'Hyperf')
-            ->withStatus(HttpCode::BAD_REQUEST)
+        return $response->withStatus(HttpCode::BAD_REQUEST)
             ->withAddedHeader('content-type', 'application/json')
             ->withBody(new SwooleStream(Json::encode($data)));
     }
