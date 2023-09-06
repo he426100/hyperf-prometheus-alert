@@ -71,7 +71,7 @@ class AlertsService
         $routes = config('alerts.routes');
         foreach ($routes as $route) {
             if ($alert['status'] == 'resolved' && !$route['send_resolved']) {
-                logs()->info('告警名称: %s 路由规则: %s 路由类型: %s 路由恢复告警: %s', $alert['labels']['alertname'], $route['name'], $route['type'], $route['send_resolved']);
+                logs()->info(sprintf('告警名称: %s 路由规则: %s 路由类型: %s 路由恢复告警: %s', $alert['labels']['alertname'], $route['name'], $route['type'], $route['send_resolved']));
                 continue;
             }
             $match = 0;
