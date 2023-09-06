@@ -15,6 +15,5 @@ POST http://127.0.0.1/alerts
 POST http://127.0.0.1//prometheusalert  
 
 ### TODO
-- 根据配置支持恢复消息
 - 路由可按关键词匹配
 - 支持静默（按路由/关键词）

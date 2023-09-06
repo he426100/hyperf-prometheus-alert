@@ -67,12 +67,13 @@ class AlertsService
 
     public function getMessages(array $alert): array
     {
-        if ($alert['status'] == 'resolved') {
-            return [];
-        }
         $messages = [];
         $routes = config('alerts.routes');
         foreach ($routes as $route) {
+            if ($alert['status'] == 'resolved' && !$route['send_resolved']) {
+                logs()->info('告警名称: %s 路由规则: %s 路由类型: %s 路由恢复告警: %s', $alert['labels']['alertname'], $route['name'], $route['type'], $route['send_resolved']);
+                continue;
+            }
             $match = 0;
             foreach ($route['labels'] as $ruleName => $ruleValue) {
                 foreach ($alert['labels'] as $labelKey => $labelValue) {
