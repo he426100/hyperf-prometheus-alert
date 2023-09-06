@@ -47,7 +47,6 @@ class AlertsService
 
     public function handle(array $post)
     {
-        logs()->info('Alerts: ' . json_encode($post));
         try {
             foreach ($post['alerts'] as $item) {
                 $alert = [
