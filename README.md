@@ -13,6 +13,7 @@ docker run -d \
 ### 配置
 路由配置：[config/autoload/alerts.php](https://github.com/he426100/hyperf-prometheus-alert/blob/master/config/autoload/alerts.php)  
 模板：[storage/view/](https://github.com/he426100/hyperf-prometheus-alert/tree/master/storage/view/)，模板引擎：[blade](https://learnku.com/docs/laravel/5.5/blade/1304)，理论上支持PrometheusAlert的所有模板  
+推送通道的密钥写在`.env`文件中
 
 ### 接入
 只支持[prometheus](https://feiyu563.gitbook.io/prometheusalert/system/system-prometheus)接入  
